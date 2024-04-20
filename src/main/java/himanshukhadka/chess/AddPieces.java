@@ -31,52 +31,60 @@ public class AddPieces {
         Image whitePawn = new Image("https://upload.wikimedia.org/wikipedia/commons/0/04/Chess_plt60.png");
 
         //Adding pieces to the board and aligning them in center
-        for (int i = 0; i<8; i++){
-            for (int j = 0; j<8; j++){
-                ImageView piece = new ImageView();
-                piece.setFitHeight(200);
-                piece.setFitWidth(200);
-                switch (board[i][j]){
-                    case 'K':
-                        piece.setImage(whiteKing);
-                        break;
-                    case 'k':
-                        piece.setImage(blackKing);
-                        break;
-                    case 'Q':
-                        piece.setImage(whiteQueen);
-                        break;
-                    case 'q':
-                        piece.setImage(blackQueen);
-                        break;
-                    case 'R':
-                        piece.setImage(whiteRook);
-                        break;
-                    case 'r':
-                        piece.setImage(blackRook);
-                        break;
-                    case 'B':
-                        piece.setImage(whiteBishop);
-                        break;
-                    case 'b':
-                        piece.setImage(blackBishop);
-                        break;
-                    case 'N':
-                        piece.setImage(whiteKnight);
-                        break;
-                    case 'n':
-                        piece.setImage(blackKnight);
-                        break;
-                    case 'P':
-                        piece.setImage(whitePawn);
-                        break;
-                    case 'p':
-                        piece.setImage(blackPawn);
-                        break;
-                    default:
-                        continue;
+        for(int i = 0;i<8;i++){
+            for (int j = 0;j<8;j++){
+                if (i==0){
+                    if (j==0 || j==7){
+                        pane.add(new ImageView(blackRook),j,i);
+                        board[i][j] = 'R';
+                    }
+                    else if (j==1 || j==6){
+                        pane.add(new ImageView(blackKnight),j,i);
+                        board[i][j] = 'N';
+                    }
+                    else if (j==2 || j==5){
+                        pane.add(new ImageView(blackBishop),j,i);
+                        board[i][j] = 'B';
+                    }
+                    else if (j==3){
+                        pane.add(new ImageView(blackQueen),j,i);
+                        board[i][j] = 'Q';
+                    }
+                    else if (j==4){
+                        pane.add(new ImageView(blackKing),j,i);
+                        board[i][j] = 'K';
+                    }
                 }
-                pane.add(piece, j, i);
+                else if (i==1){
+                    pane.add(new ImageView(blackPawn),j,i);
+                    board[i][j] = 'P';
+                }
+                else if (i==6){
+                    pane.add(new ImageView(whitePawn),j,i);
+                    board[i][j] = 'p';
+                }
+                else if (i==7){
+                    if (j==0 || j==7){
+                        pane.add(new ImageView(whiteRook),j,i);
+                        board[i][j] = 'r';
+                    }
+                    else if (j==1 || j==6){
+                        pane.add(new ImageView(whiteKnight),j,i);
+                        board[i][j] = 'n';
+                    }
+                    else if (j==2 || j==5){
+                        pane.add(new ImageView(whiteBishop),j,i);
+                        board[i][j] = 'b';
+                    }
+                    else if (j==3){
+                        pane.add(new ImageView(whiteQueen),j,i);
+                        board[i][j] = 'q';
+                    }
+                    else if (j==4){
+                        pane.add(new ImageView(whiteKing),j,i);
+                        board[i][j] = 'k';
+                    }
+                }
             }
         }
 
