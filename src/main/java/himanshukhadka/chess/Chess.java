@@ -19,6 +19,7 @@ public class Chess extends Application{
         pane.setGridLinesVisible(true);
         pane.setPadding(new Insets(10,10,10,10));
         pane.setMaxHeight(1600);
+        pane.setMaxWidth(1600);
         for(int i = 0;i<8;i++){
             for (int j = 0;j<8;j++){
                 Pane cell = new Pane();
