@@ -1,5 +1,6 @@
 package himanshukhadka.chess;
 import javafx.application.Application;
+import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -16,6 +17,7 @@ public class Chess extends Application{
         //Grid pane
         GridPane pane = new GridPane();
         pane.setGridLinesVisible(true);
+        pane.setPadding(new Insets(10,10,10,10));
         for(int i = 0;i<8;i++){
             for (int j = 0;j<8;j++){
                 Pane cell = new Pane();
