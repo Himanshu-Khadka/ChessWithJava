@@ -28,8 +28,13 @@ public class Chess extends Application{
             }
         }
 
-         //Adding pieces using AddPieces class
-            AddPieces.addPieces(pane, board);
+            //Adding pieces using AddPieces class This is the line that is causing the error
+            try {
+                AddPieces.addPieces(pane, board);
+            } catch (Exception e) {
+                e.printStackTrace();
+                System.out.println("Error in adding pieces");
+            }
 
 
 
