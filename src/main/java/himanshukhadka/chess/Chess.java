@@ -18,10 +18,12 @@ public class Chess extends Application{
         GridPane pane = new GridPane();
         pane.setGridLinesVisible(true);
         pane.setPadding(new Insets(10,10,10,10));
+        pane.setMaxHeight(1600);
         for(int i = 0;i<8;i++){
             for (int j = 0;j<8;j++){
                 Pane cell = new Pane();
                 cell.setPrefSize(200, 200);
+
                 if ((i%2)==(j%2)){
                     cell.setStyle("-fx-background-color: rgba(0,0,0,0.8);");
                 }
