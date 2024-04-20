@@ -21,18 +21,15 @@ public class Chess extends Application{
                 Pane cell = new Pane();
                 cell.setPrefSize(200, 200);
                 if ((i%2)==(j%2)){
-                    cell.setStyle("-fx-background-color: black;");
+                    cell.setStyle("-fx-background-color: rgba(0,0,0,0.8);");
                 }
                 pane.add(cell,j,i);
                 board[i][j] = ' ';
             }
         }
 
-        Image pieceOne = new Image("https://upload.wikimedia.org/wikipedia/commons/0/04/Chess_plt60.png");
-        ImageView one = new ImageView(pieceOne);
-        one.setFitHeight(100);
-        one.setFitWidth(100);
-        pane.add(one,1,7);
+         //Adding pieces using AddPieces class
+            AddPieces.addPieces(pane, board);
 
 
 
